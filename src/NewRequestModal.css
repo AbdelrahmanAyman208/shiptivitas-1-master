@@ -1,0 +1,197 @@
+.new-req-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: newReqFadeIn 0.2s ease;
+}
+
+@keyframes newReqFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.new-req-dialog {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  max-height: min(90vh, 640px);
+  display: flex;
+  flex-direction: column;
+  animation: newReqPop 0.22s cubic-bezier(0.21, 1.02, 0.53, 1);
+}
+
+@keyframes newReqPop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.new-req-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 1.15rem 1.25rem 0.75rem;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.new-req-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.new-req-sub {
+  margin: 4px 0 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.new-req-close {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #f4f4f5;
+  color: #52525b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.new-req-close:hover {
+  background: #e4e4e7;
+  color: #18181b;
+}
+
+.new-req-form {
+  padding: 1rem 1.25rem 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.new-req-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.new-req-field input[type='text'],
+.new-req-field input[type='date'],
+.new-req-field select,
+.new-req-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 10px 12px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.new-req-field textarea {
+  min-height: 72px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.new-req-field input:focus,
+.new-req-field select:focus,
+.new-req-field textarea:focus {
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.new-req-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.new-req-error {
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin: 0;
+}
+
+.new-req-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+.new-req-btn {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.new-req-btn--ghost {
+  background: transparent;
+  color: #52525b;
+  border: 1px solid #e4e4e7;
+}
+
+.new-req-btn--ghost:hover {
+  background: #fafafa;
+  color: #18181b;
+}
+
+.new-req-btn--primary {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.new-req-btn--primary:hover {
+  background: #4338ca;
+}
+
+.new-req-btn--primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .new-req-row {
+    grid-template-columns: 1fr;
+  }
+}

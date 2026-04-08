@@ -1,0 +1,134 @@
+.Swimlane-column {
+  border-radius: var(--r);
+  border: 1px solid var(--backlog-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.Swimlane-column.backlog {
+  background: var(--backlog-col);
+  border-color: var(--backlog-border);
+}
+
+.Swimlane-column.in-progress {
+  background: var(--prog-col);
+  border-color: var(--prog-border);
+}
+
+.Swimlane-column.complete {
+  background: var(--done-col);
+  border-color: var(--done-border);
+}
+
+.col-header {
+  padding: 13px 14px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid;
+}
+
+.backlog .col-header {
+  border-color: var(--backlog-border);
+}
+
+.in-progress .col-header {
+  border-color: var(--prog-border);
+}
+
+.complete .col-header {
+  border-color: var(--done-border);
+}
+
+.col-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.backlog .col-dot {
+  background: var(--backlog-dot);
+}
+
+.in-progress .col-dot {
+  background: var(--prog-dot);
+}
+
+.complete .col-dot {
+  background: var(--done-dot);
+}
+
+.col-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  flex: 1;
+}
+
+.backlog .col-title {
+  color: var(--text-2);
+}
+
+.in-progress .col-title {
+  color: #1d4ed8;
+}
+
+.complete .col-title {
+  color: #15803d;
+}
+
+.col-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.backlog .col-badge {
+  background: var(--backlog-card-border);
+  color: var(--text-2);
+}
+
+.in-progress .col-badge {
+  background: var(--prog-tag-bg);
+  color: var(--prog-tag-text);
+}
+
+.complete .col-badge {
+  background: var(--done-tag-bg);
+  color: var(--done-tag-text);
+}
+
+.col-add {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-xs);
+  border: 1px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-3);
+  transition: background .15s, color .15s;
+}
+
+.col-add:hover {
+  background: var(--surface);
+  color: var(--text-1);
+}
+
+.swimlane-cards {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 80px;
+}
